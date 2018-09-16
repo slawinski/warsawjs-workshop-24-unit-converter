@@ -15,6 +15,7 @@ const { currency } = require('../converters/currency');
 
 const host = 'localhost';
 const port = process.env.PORT || 3333;
+const url = `http://${host}:${port}/`;
 
 const app = express();
 
@@ -23,11 +24,6 @@ app.disable('x-powered-by');
 app.use(morgan('short', logger));
 
 logger.info(`Starting ${doc.info.title}`);
-
-app.listen(port, () => {
-  logger.info(`Frontend: http://${host}:${port}/`);
-  logger.info(`API Docs: http://${host}:${port}/doc`);
-});
 
 app.use(express.static(join(__dirname, '..', 'frontend')));
 
@@ -53,3 +49,11 @@ app.get('/api/currency', async (req, res) => {
   logger.info(JSON.stringify(response));
   res.json(response);
 });
+
+const server = new Promise(resolve => app.listen(port, () => {
+  logger.info(`Frontend: ${url}`);
+  logger.info(`API Docs: ${url}doc`);
+  resolve();
+}));
+
+module.exports = { server, url };

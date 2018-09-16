@@ -1,5 +1,5 @@
 {
-  "name": "warsawjs-workshop-23-unit-converter",
+  "name": "warsawjs-workshop-24-unit-converter",
   "version": "0.0.0",
   "description": "Unit Converter Project for WarsawJS Workshop 22 Group 1",
   "main": "index.js",
@@ -9,7 +9,7 @@
     "sysinfo": "uname -a && cat /proc/meminfo && df -h . && echo SYSINFO OK || echo SYSINFO ERROR",
     "versions": "echo -n 'NODE ' && node -v && echo -n 'NPM ' && npm -v && node -e 'console.log(process.versions);' && echo VERSIONS OK || echo VERSIONS ERROR",
     "start": "node backend/server.js",
-    "jest": "jest && echo JEST OK || (echo JEST ERROR; false)",
+    "jest": "jest --forceExit --detectOpenHandles && echo JEST OK || (echo JEST ERROR; false)",
     "jest-cover": "jest --coverage && echo JEST OK || (echo JEST ERROR; false)",
     "tap": "tap tests/tap/*.test.js && echo TAP OK || (echo TAP ERROR; false)",
     "tap-cover": "tap tests/tap/*.test.js --coverage && echo TAP OK || (echo TAP ERROR; false)",
@@ -19,7 +19,7 @@
     "testcafe:gui": "testcafe chrome tests/testcafe/test.js --app \"npm start\" && echo TESTCAFE:GUI OK || (echo TESTCAFE:GUI ERROR; false)",
     "test:gui": "npm run lint && npm run tape && npm run tap && npm run mocha && npm run testcafe && echo NPM TEST OK || (echo NPM TEST ERROR; false)",
     "test:nolint": "npm run tape && npm run tap && npm run mocha && npm run testcafe && echo NPM TEST OK || (echo NPM TEST ERROR; false)",
-    "test": "npm run lint && npm run tape && npm run tap && npm run mocha && npm run testcafe && echo NPM TEST OK || (echo NPM TEST ERROR; false)"
+    "test": "npm run lint && npm run tape && npm run tap && npm run mocha && npm run jest && echo NPM TEST OK || (echo NPM TEST ERROR; false)"
   },
   "jest": {
     "testRegex": "\\.test\\.js$",
