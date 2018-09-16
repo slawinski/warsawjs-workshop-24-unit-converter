@@ -1,10 +1,11 @@
-# Unit Converter
-
-## Project for WarsawJS Workshop 24 Group 1
+Unit Converter
+=
 
 [![Build Status](https://semaphoreci.com/api/v1/slawinski/warsawjs-workshop-24-unit-converter/branches/master/badge.svg)](https://semaphoreci.com/slawinski/warsawjs-workshop-24-unit-converter)
 
-<!-- This project is based on the project from Workshop 22 and 23:
+Project for WarsawJS Workshop 24 Group 1
+-
+This project is based on the project from Workshop 22 and 23:
 
 * https://github.com/rsp/warsawjs-workshop-22-unit-converter
 * https://github.com/rsp/warsawjs-workshop-23-unit-converter
@@ -420,4 +421,4 @@ innerText vs. textContent
 -
 https://kellegous.com/j/2013/02/27/innertext-vs-textcontent/
 
---- -->
+---
