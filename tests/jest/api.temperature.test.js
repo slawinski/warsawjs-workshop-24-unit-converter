@@ -17,7 +17,9 @@ describe('temperature api', () => {
 
   it('temp conventer', async () => {
     await server;
-    await request.get('api/temperature?fromValue=50&fromUnit=C&toUnit=F').expect(200);
+    await request.get('api/temperature?fromValue=50&fromUnit=C&toUnit=F')
+      .expect(200)
+      .expect({"type":"temperature","fromValue":"50","fromUnit":"C","toUnit":"F","result":122});
   });
 });
 
